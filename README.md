@@ -56,14 +56,32 @@ The [arithmetic mean][arithmetic-mean] is defined as
 
 <!-- /.intro -->
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/stats-base-ndarray-meanpw
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm`][esm-url] branch (see [README][esm-readme]).
+-   If you are using Deno, visit the [`deno`][deno-url] branch (see [README][deno-readme] for usage intructions).
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd`][umd-url] branch (see [README][umd-readme]).
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+To view installation and usage instructions specific to each branch build, be sure to explicitly navigate to the respective README files on each branch, as linked to above.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
 ```javascript
-import meanpw from 'https://cdn.jsdelivr.net/gh/stdlib-js/stats-base-ndarray-meanpw@esm/index.mjs';
+var meanpw = require( '@stdlib/stats-base-ndarray-meanpw' );
 ```
 
 #### meanpw( arrays )
@@ -71,7 +89,7 @@ import meanpw from 'https://cdn.jsdelivr.net/gh/stdlib-js/stats-base-ndarray-mea
 Computes the [arithmetic mean][arithmetic-mean] of a one-dimensional ndarray using pairwise summation.
 
 ```javascript
-import ndarray from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-ctor@esm/index.mjs';
+var ndarray = require( '@stdlib/ndarray-base-ctor' );
 
 var xbuf = [ 1.0, 3.0, 4.0, 2.0 ];
 var x = new ndarray( 'generic', xbuf, [ 4 ], [ 1 ], 0, 'row-major' );
@@ -105,16 +123,11 @@ The function has the following parameters:
 
 <!-- eslint-disable no-console -->
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<body>
-<script type="module">
-
-import discreteUniform from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-array-discrete-uniform@esm/index.mjs';
-import ndarray from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-ctor@esm/index.mjs';
-import ndarray2array from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-to-array@esm/index.mjs';
-import meanpw from 'https://cdn.jsdelivr.net/gh/stdlib-js/stats-base-ndarray-meanpw@esm/index.mjs';
+```javascript
+var discreteUniform = require( '@stdlib/random-array-discrete-uniform' );
+var ndarray = require( '@stdlib/ndarray-base-ctor' );
+var ndarray2array = require( '@stdlib/ndarray-to-array' );
+var meanpw = require( '@stdlib/stats-base-ndarray-meanpw' );
 
 var xbuf = discreteUniform( 10, -50, 50, {
     'dtype': 'generic'
@@ -124,15 +137,23 @@ console.log( ndarray2array( x ) );
 
 var v = meanpw( [ x ] );
 console.log( v );
-
-</script>
-</body>
-</html>
 ```
 
 </section>
 
 <!-- /.examples -->
+
+* * *
+
+<section class="references">
+
+## References
+
+-   Higham, Nicholas J. 1993. "The Accuracy of Floating Point Summation." _SIAM Journal on Scientific Computing_ 14 (4): 783–99. doi:[10.1137/0914050][@higham:1993a].
+
+</section>
+
+<!-- /.references -->
 
 <!-- Section for related `stdlib` packages. Do not manually edit this section, as it is automatically populated. -->
 
@@ -151,7 +172,7 @@ console.log( v );
 
 ## Notice
 
-This package is part of [stdlib][stdlib], a standard library with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
+This package is part of [stdlib][stdlib], a standard library for JavaScript and Node.js, with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
 
 For more information on the project, filing bug reports and feature requests, and guidance on how to develop [stdlib][stdlib], see the main project [repository][stdlib].
 
@@ -168,7 +189,7 @@ See [LICENSE][stdlib-license].
 
 ## Copyright
 
-Copyright &copy; 2016-2025. The Stdlib [Authors][stdlib-authors].
+Copyright &copy; 2016-2026. The Stdlib [Authors][stdlib-authors].
 
 </section>
 
@@ -181,8 +202,8 @@ Copyright &copy; 2016-2025. The Stdlib [Authors][stdlib-authors].
 [npm-image]: http://img.shields.io/npm/v/@stdlib/stats-base-ndarray-meanpw.svg
 [npm-url]: https://npmjs.org/package/@stdlib/stats-base-ndarray-meanpw
 
-[test-image]: https://github.com/stdlib-js/stats-base-ndarray-meanpw/actions/workflows/test.yml/badge.svg?branch=main
-[test-url]: https://github.com/stdlib-js/stats-base-ndarray-meanpw/actions/workflows/test.yml?query=branch:main
+[test-image]: https://github.com/stdlib-js/stats-base-ndarray-meanpw/actions/workflows/test.yml/badge.svg?branch=v0.1.0
+[test-url]: https://github.com/stdlib-js/stats-base-ndarray-meanpw/actions/workflows/test.yml?query=branch:v0.1.0
 
 [coverage-image]: https://img.shields.io/codecov/c/github/stdlib-js/stats-base-ndarray-meanpw/main.svg
 [coverage-url]: https://codecov.io/github/stdlib-js/stats-base-ndarray-meanpw?branch=main
@@ -194,8 +215,8 @@ Copyright &copy; 2016-2025. The Stdlib [Authors][stdlib-authors].
 
 -->
 
-[chat-image]: https://img.shields.io/gitter/room/stdlib-js/stdlib.svg
-[chat-url]: https://app.gitter.im/#/room/#stdlib-js_stdlib:gitter.im
+[chat-image]: https://img.shields.io/badge/zulip-join_chat-brightgreen.svg
+[chat-url]: https://stdlib.zulipchat.com
 
 [stdlib]: https://github.com/stdlib-js/stdlib
 
@@ -215,6 +236,8 @@ Copyright &copy; 2016-2025. The Stdlib [Authors][stdlib-authors].
 [stdlib-license]: https://raw.githubusercontent.com/stdlib-js/stats-base-ndarray-meanpw/main/LICENSE
 
 [arithmetic-mean]: https://en.wikipedia.org/wiki/Arithmetic_mean
+
+[@higham:1993a]: https://doi.org/10.1137/0914050
 
 </section>
 
